@@ -12,6 +12,9 @@ app.use(cors());
 
 app.use('/users', userRouter);
 app.use('/colors', colorRouter);
+app.get('/test', (req, res) => {
+	res.send(process.env.API_TOKEN);
+});
 
 app.listen(PORT, () => {
 	console.log(`API is ready on ${CLIENT_URL}:${PORT} 🚀🚀🚀`);
