@@ -3,6 +3,13 @@ import express from 'express';
 import cors from 'cors';
 import { colorRouter } from './routers/color.router';
 import { userRouter } from './routers/user.router';
+import dotenv from "dotenv";
+import { connect } from './utils/db';
+import { connection } from './reset-db';
+
+
+dotenv.config();
+connection()
 
 export const CLIENT_URL = process.env.CLIENT_URL;
 export const PORT = process.env.PORT;
